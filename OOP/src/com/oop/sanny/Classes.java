@@ -44,6 +44,9 @@ public class Classes {
         System.out.println(random.rno);
         System.out.println(random.name);
         System.out.println(random.marks);
+
+        Student random2 = new Student();
+        System.out.println(random2.name);
     }
 }
 
@@ -82,11 +85,11 @@ class Student{
     }
 
     //constructor overloading
-    Student(){
-        this.rno = 31;
-        this.name = "Sauce";
-        this.marks = 87;
-    }
+//    Student(){
+//        this.rno = 31;
+//        this.name = "Sauce";
+//        this.marks = 87;
+//    }
 
     //what the fuck kunal
     Student(Student other){
@@ -95,9 +98,21 @@ class Student{
         this.marks = other.marks;
     }
 
+    //also note that we can call a constructor from another constructor
+    Student(){
+        this (13, "default person", 300);
+        //internally: new Student(13, "default person", 100.0f);
+    }
+
     public void greeting(){
         String name = "Sanny";
         System.out.println("Hello, my name is " + name);
         System.out.println("Hello, my name is " + this.name);
     }
 }
+
+//Student one = new Student();
+//Student two = one;
+// this is possible but notice how both the things will point to the same object.
+// two doesnt allocate any new memory.
+//hence any changes made via 1 will also lead to changes in two.

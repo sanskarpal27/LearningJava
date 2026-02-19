@@ -1,0 +1,6 @@
+- garbage collection in java is automatic (unlike cpp).
+- but sometimes, when an object is destroyed and you need to perform some actions, then java provides us with something called finalization.
+- unlike cpp where destructors are used to destroy objects...in java you cannot manually destroy objects once they are deleted, but it does allow you to specify what to do when the objects are specified.
+- uses finalize method when object is going to be destroyed.
+- for practical demonstration, refer to the "WrapperClasses.java" file.
+- the finalize method no longer works (was removed in Java 9).
