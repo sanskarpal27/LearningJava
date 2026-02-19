@@ -36,6 +36,14 @@ public class Classes {
         sanny.name = "Sanny";
         sanny.marks = 91;
         System.out.println(sanny.rno + " " + sanny.name + " " + sanny.marks);
+
+        Student kunal = new Student(13, "KunalKushwaha", 89);
+        kunal.greeting();
+
+        Student random = new Student(kunal);
+        System.out.println(random.rno);
+        System.out.println(random.name);
+        System.out.println(random.marks);
     }
 }
 
@@ -45,4 +53,51 @@ class Student{
     int rno;
     String name;    //you see this is an object perhaps of the String class.
     float marks;
+
+    // a constructor basically defines what happens when an object is created
+    //it is a special type of function in a class...by default also there is a constructor
+    //it runs when you create an object and you can allocate some variables through it as well.
+    //is default constructor is used then java makes everything empty by default.
+    //we can also have parameterized constructors
+
+//    Student(){
+//        kunal.rno = 13;
+//        kunal.name = "KunalKushwaha";
+//        kunal.marks = 88;
+//    }
+    //you cant do this cuz the class doesn't know about kunal the object cuz a class is just a template.
+    //so we use the 'this' keyword
+
+//    Student(){
+//        this.rno = 13;
+//        this.name = "KunalKushwaha";
+//        this.marks = 22;
+//    }
+
+    //but this way every object i create will have the same properties. hence we make a parameterized constructor.
+    Student(int rno, String name, float marks){
+        this.rno = rno;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    //constructor overloading
+    Student(){
+        this.rno = 31;
+        this.name = "Sauce";
+        this.marks = 87;
+    }
+
+    //what the fuck kunal
+    Student(Student other){
+        this.name = other.name;
+        this.rno = other.rno;
+        this.marks = other.marks;
+    }
+
+    public void greeting(){
+        String name = "Sanny";
+        System.out.println("Hello, my name is " + name);
+        System.out.println("Hello, my name is " + this.name);
+    }
 }
