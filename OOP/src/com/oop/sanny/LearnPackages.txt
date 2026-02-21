@@ -1,0 +1,6 @@
+- packages are just containers/boxes for classes
+- they keep class names compartmentalized
+- in simple terms a package is just a folder
+- you cannot have two classes of the same name in a package.
+- you should mention the path whenever writing a file.
+- by convention, if you are making something for a company like xyz.com then the package name would be com.xyz
