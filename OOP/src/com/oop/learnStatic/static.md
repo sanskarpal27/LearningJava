@@ -31,7 +31,15 @@
 
 ## Crazy Shit
 - you cannot use 'this' keyword inside static methods.
+- static stuff is created during compile-time, and since non-static stuff depends on objects (which in turn are created during runtime) so all non-static things are created during runtime only.
 
 ## Initialization of static variables
 - done using something called a *STATIC BLOCK*
 - the static block gets executed exactly once when the class is first loaded i.e. when the first object is created.
+
+
+## Inner Classes
+- the inner classes can be static or non-static
+- outside classes cannot be static kyuki they are not dependent on any other classes.
+- when the class is inside another class, then it is dependent on the outer class so it becomes a non-static thing.
+- you see here, the Test class is static so it does not depend on the instances of "InnerClasses" class...but please understand that the class and the main method can have instances and shit.
